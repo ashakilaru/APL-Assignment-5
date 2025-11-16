@@ -1,0 +1,19 @@
+Object subclass: #Ride
+    instanceVariableNames: 'rideID pickupLocation dropoffLocation distance'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'RideSharing'
+
+Ride >> initializeWithID: anID pickup: pu dropoff: doff distance: dist
+    rideID := anID.
+    pickupLocation := pu.
+    dropoffLocation := doff.
+    distance := dist.
+
+Ride >> fare
+    "Default fare calculation"
+    ^ distance * 1.5.
+
+Ride >> rideDetails
+    ^ 'Ride ', rideID, ': ', pickupLocation, ' -> ', dropoffLocation, 
+        ' (', distance printString, ' mi) - $', (self fare) printString.

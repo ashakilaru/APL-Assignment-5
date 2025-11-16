@@ -1,0 +1,18 @@
+Object subclass: #Driver
+    instanceVariableNames: 'driverID name rating assignedRides'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'RideSharing'
+
+Driver >> initializeWithID: anID name: aName rating: aRating
+    driverID := anID.
+    name := aName.
+    rating := aRating.
+    assignedRides := Array new.
+
+Driver >> addRide: aRide
+    assignedRides := assignedRides copyWith: aRide.
+
+Driver >> getDriverInfo
+    ^ 'Driver ', driverID, ' (', name, ') - Rating: ', rating printString,
+        ' - Rides: ', assignedRides size printString.

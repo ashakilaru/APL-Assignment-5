@@ -1,0 +1,8 @@
+Ride subclass: #StandardRide
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'RideSharing'
+
+StandardRide >> fare
+    ^ distance * 1.5

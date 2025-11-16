@@ -1,0 +1,16 @@
+Object subclass: #Rider
+    instanceVariableNames: 'riderID name requestedRides'
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'RideSharing'
+
+Rider >> initializeWithID: anID name: aName
+    riderID := anID.
+    name := aName.
+    requestedRides := Array new.
+
+Rider >> requestRide: aRide
+    requestedRides := requestedRides copyWith: aRide.
+
+Rider >> viewRides
+    requestedRides do: [:r | Transcript show: r rideDetails; cr].
